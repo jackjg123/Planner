@@ -31,7 +31,7 @@ $(document).ready(function () {
 
   $('.time-block').each(function () {
     var hour = $(this).attr('id');
-    var description = localStorage.getItem(hour);
+    var description = localStorage.getItem(hour, description);
 
     if (description !== null) {
       $(this).find('.description').val(description);
