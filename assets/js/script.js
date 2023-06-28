@@ -1,15 +1,17 @@
-// Save button. When the Button with the Save icon is clicked the user's text is saved to local storage.
-
-// Displays today's date. After DOM has loaded.
+//Allows page to load before running
 $(document).ready(function () {
+  // Displays date
   $('#currentDay').text(dayjs().format('dddd, MMMM D, YYYY'));
   var currentHour = dayjs().hour();
   console.log(currentHour);
-  // Compare current-time to each block.
-  $('.time-block').each(function () {
-    var blockHour = parseInt($(this).attr('id'));
 
-    // Add color to each time-block
+  // Compare currentHour to each time-block.
+  $('.time-block').each(function () {
+    // adds time-block id to blockHour variable
+    var blockHour = $(this).attr('id');
+
+    // Set time block past, present or future
+    // Give corresponding color for each time-block
     if (blockHour < currentHour) {
       $(this).addClass('past');
     } else if (blockHour === currentHour) {
@@ -20,7 +22,7 @@ $(document).ready(function () {
     console.log($('.time-block'));
   });
 
-  // load
+  // Saves the user's text to local storage when save button is clicked.
   $('.saveBtn').on('click', function () {
     var hour = $(this).parent().attr('id');
     var description = $(this).siblings('.description').val();
@@ -29,6 +31,7 @@ $(document).ready(function () {
     localStorage.setItem(hour, description);
   });
 
+  // Retrieves local Storage information and displays it to time-block.
   $('.time-block').each(function () {
     var hour = $(this).attr('id');
     var description = localStorage.getItem(hour, description);
