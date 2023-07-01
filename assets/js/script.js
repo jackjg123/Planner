@@ -14,10 +14,10 @@ $(document).ready(function () {
     // Give corresponding color for each time-block
     if (blockHour < currentHour) {
       $(this).addClass('past');
-    } else if (blockHour === currentHour) {
-      $(this).addClass('present');
-    } else {
+    } else if (blockHour > currentHour) {
       $(this).addClass('future');
+    } else {
+      $(this).addClass('present');
     }
     console.log($('.time-block'));
   });

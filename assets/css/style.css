@@ -1,14 +1,20 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 30px;
+  color: #650729;
+  background-color: #EECEDA;
 }
-
+header {
+  color: #650729;
+}
+  
 textarea {
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
-  border-left: 1px solid black;
+  font-size: x-large;
+  color: #F6E7EC;
+  border-left: 1px solid #650729;
   padding: 10px;
 }
 
@@ -21,27 +27,28 @@ textarea {
 }
 
 .row {
-  border-top: 1px solid white;
+  border-top: 1px solid #EECEDA;
 }
 
 .hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
+
+  color: #320314;
+
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #0B9EA8;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #A80B93
+  ;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #71A80B;
   color: white;
 }
 
